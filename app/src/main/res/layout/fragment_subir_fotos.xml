@@ -1,0 +1,72 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SubirFotos">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/card_view"
+            android:id="@+id/relativeLayout"
+            android:layout_toLeftOf="@+id/actualizar"
+            android:layout_toStartOf="@+id/actualizar">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Foto Tomada"
+                android:id="@+id/textViewTitulo"
+                android:layout_margin="5dp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="2dp"
+            android:layout_below="@id/relativeLayout">
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/listViewFoto"
+                android:layout_below="@+id/relativeLayout"
+                android:layout_alignLeft="@+id/card_view"
+                android:layout_alignStart="@+id/card_view"
+                android:verticalSpacing="2dp"
+                android:horizontalSpacing="2dp"
+                android:gravity="center"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/actualizar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/relativeLayout"
+            android:text="Actulizar" />
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/fabButton"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/fab_background"
+        android:src="@drawable/ic_action_camera"
+        android:contentDescription="@string/fab_description"/>
+
+</FrameLayout>
