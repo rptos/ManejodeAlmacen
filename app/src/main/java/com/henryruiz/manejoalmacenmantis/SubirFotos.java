@@ -16,6 +16,8 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -49,8 +51,8 @@ public class SubirFotos extends Fragment {
     View vista;
     Context c;
     Conexion s;
-    private static String CARPETA = "/sdcard/DCIM/Camera/";
-    private String archivo = "foto.jpg";
+    private static String CARPETA = Environment.getExternalStorageDirectory().toString();
+    private String archivo = "/foto.jpg";
     private String dir = "";
     Envio f;
     String foto = "";
@@ -83,6 +85,8 @@ public class SubirFotos extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         vista = inflater.inflate(com.henryruiz.manejoalmacenmantis.R.layout.fragment_subir_fotos, container, false);
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
         c = (Context)getActivity();
         s = new Conexion(c);
         f = new Envio(c);

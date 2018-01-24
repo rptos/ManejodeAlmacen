@@ -126,7 +126,7 @@ public class Envio extends Conexion {
 		String datos="";
 		if (dir.equals(""))
 			existingFileName = Environment.getExternalStorageDirectory()
-				.getAbsolutePath() + "/DCIM/Camera/" + archivo;
+				.getAbsolutePath() + archivo;
 		else{
 			existingFileName = dir;
 		}
