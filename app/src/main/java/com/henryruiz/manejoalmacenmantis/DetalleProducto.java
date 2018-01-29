@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.MediaStore;
@@ -89,6 +90,8 @@ public class DetalleProducto extends BaseActivity implements ObservableScrollVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(com.henryruiz.manejoalmacenmantis.R.layout.activity_detalle_producto);
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         setSupportActionBar((Toolbar) findViewById(com.henryruiz.manejoalmacenmantis.R.id.toolbar));
         toolbar = (Toolbar) findViewById(com.henryruiz.manejoalmacenmantis.R.id.toolbar);
